@@ -4,7 +4,7 @@
 >
 > 作者：CW（林啟維）— Portaly CEO & Founder
 >
-> 參考資料：[Muse Crystal Seed 晶種指南](https://github.com/frank890417/muse-crystal-seed/blob/main/CRYSTAL-SEED.md) by Frank
+> 參考資料：[Muse Crystal Seed 晶種指南](https://github.com/frank890417/muse-crystal-seed/blob/main/CRYSTAL-SEED.md) by [Frank](https://github.com/frank890417)
 
 ---
 

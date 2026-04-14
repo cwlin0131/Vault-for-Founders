@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Readme.md",
+                "file": "README.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Readme"
+              "title": "README"
             }
           }
         ]
@@ -182,5 +182,17 @@
     }
   },
   "active": "d2cfb56cc98eb42b",
-  "lastOpenFiles": []
+  "lastOpenFiles": [
+    "architecture.md",
+    "build-log.md",
+    "README.md",
+    "templates/after-action.md",
+    "templates/vault-readme.md",
+    "templates/memory-summary.md",
+    "templates/agent-persona.md",
+    "README.md.tmp.5.1776161939661",
+    "setup-guide.md",
+    "Readme.md",
+    "templates"
+  ]
 }

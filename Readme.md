@@ -49,7 +49,7 @@ Vault for Founders 是一套讓創業者從零建立 AI 知識庫的完整框架
 
 ## 為什麼要建自己的 Vault
 
-![Founder's Vault — Before and After](Vault_ZH01%202.png)
+![Founder's Vault — Before and After](vault-zh01.png)
 
 在未來的世界裡，我們會跟 AI 討論越來越多事情：產品策略、市場判斷、財務規劃、人事決策。這些對話會累積出大量的 context、個人知識、獨家資料。能不能有效管理這些知識，會是你能否隨著 AI 一起 scale 的最大關鍵。
 
@@ -74,7 +74,7 @@ Vault for Founders 是一套讓創業者從零建立 AI 知識庫的完整框架
 
 ## 為什麼用 Obsidian + Git
 
-![Founder's Vault Structure — 創業者的 AI 金庫架構](Vault_ZH02%201.png)
+![Founder's Vault Structure — 創業者的 AI 金庫架構](vault-zh02.png)
 
 創辦人的決策脈絡散落在 Notion、Slack、你的腦袋裡，每次跟 AI 對話都要重新講一遍。Vault 把這些結構化，讓 AI 每次都能帶著完整記憶上線。
 
@@ -86,7 +86,7 @@ Vault for Founders 是一套讓創業者從零建立 AI 知識庫的完整框架
 
 **Obsidian** 是本機的 Markdown 編輯器，所有筆記都是你電腦裡的 `.md` 檔案，Agent 直接讀取，零 API 成本。**Git** 負責版本控制和備份，搭配 GitHub 同步，換電腦一行指令搞定。
 
-*如果你是超級個體、自由工作者，想建立的是「個人 AI 靈魂」，可以參考 Che-Yu Wu 吳哲宇 的 [Muse Crystal Seed 晶種指南](https://github.com/frank890417/muse-crystal-seed)
+*如果你是超級個體、自由工作者，想建立的是「個人 AI 靈魂」，可以參考 Che-Yu Wu 吳哲宇 的 [Muse Crystal Seed 晶種指南](https://github.com/frank890417/muse-crystal-seed)*
 
 ---
 
@@ -167,7 +167,7 @@ CW Vault/
 
 ### 特別感謝
 
-這個知識庫的概念啟蒙來自 [**Che-Yu Wu 吳哲宇 吳哲宇**](https://portaly.cc/cheyuwu) 打造的 [Muse Crystal Seed 晶種指南](https://github.com/frank890417/muse-crystal-seed)。Che-Yu Wu 吳哲宇 跟我詳細說明與示範了如何用結構化的方式讓 AI 擁有長期記憶與人格。Vault for Founders 在他的基礎上，針對創業者的場景重新設計了架構與角色定位。
+這個知識庫的概念啟蒙來自 [**Che-Yu Wu 吳哲宇**](https://portaly.cc/cheyuwu) 打造的 [Muse Crystal Seed 晶種指南](https://github.com/frank890417/muse-crystal-seed)。Che-Yu Wu 吳哲宇跟我詳細說明與示範了如何用結構化的方式讓 AI 擁有長期記憶與人格。Vault for Founders 在他的基礎上，針對創業者的場景重新設計了架構與角色定位。
 
 ---
 
@@ -175,4 +175,4 @@ CW Vault/
 
 本專案採用 [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) 授權。你可以自由使用、修改、商用，只要標註出處：
 
-> Based on [Vault for Founders](https://github.                                                         
+> Based on [Vault for Founders](https://github.com/cwlin0131/Vault-for-Founders) by CW（林啟維）

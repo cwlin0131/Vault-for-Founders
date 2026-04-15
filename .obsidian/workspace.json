@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "setup-guide.md",
+                "file": "Readme.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "setup-guide"
+              "title": "Readme"
             }
           }
         ]
@@ -183,10 +183,14 @@
   },
   "active": "d2cfb56cc98eb42b",
   "lastOpenFiles": [
-    "architecture.md",
-    "build-log.md",
+    "Readme.md.tmp.5.1776248675412",
+    "optimization-guide.md",
     "Readme.md",
     "setup-guide.md",
+    "Readme.md.tmp.5.1776248597226",
+    "optimization-guide.md.tmp.5.1776248589648",
+    "architecture.md",
+    "build-log.md",
     "templates/cowork-instructions.md",
     "templates/memory-summary.md",
     "templates/vault-readme.md",
@@ -200,8 +204,6 @@
     "setup-guide.md.tmp.5.1776165740043",
     "README.md.tmp.5.1776165652246",
     "README.md.tmp.5.1776165649145",
-    "README.md.tmp.5.1776165499511",
-    "README.md.tmp.5.1776165490381",
-    "README.md.tmp.5.1776165480802"
+    "README.md.tmp.5.1776165499511"
   ]
 }

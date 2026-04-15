@@ -115,7 +115,8 @@ Vault for Founders 是一套讓創業者從零建立 AI 知識庫的完整框架
     ├── vault-readme.md       ← Vault 索引模板
     ├── agent-persona.md      ← Agent 人格設定模板
     ├── memory-summary.md     ← 長期記憶摘要模板
-    └── after-action.md       ← 收官流程模板
+    ├── after-action.md       ← 收官流程模板
+    └── cowork-instructions.md ← Cowork Global Instructions 設定模板
 ```
 
 ---

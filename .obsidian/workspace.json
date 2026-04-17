@@ -183,6 +183,7 @@
   },
   "active": "62bbdedc2ceb6222",
   "lastOpenFiles": [
+    "en/templates/voice-and-tone.md.tmp.5.1776366845910",
     "zh/templates/memory-summary.md",
     "zh/templates/vault-readme.md",
     "zh/templates/agent-persona.md",
@@ -221,7 +222,6 @@
     "build-log.md",
     "architecture.md",
     "templates/after-action.md",
-    "templates/vault-readme.md",
-    "templates/memory-summary.md"
+    "templates/vault-readme.md"
   ]
 }

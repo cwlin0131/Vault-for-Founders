@@ -28,9 +28,11 @@
 
 ## 適用範圍
 
-**要遵守：** LinkedIn 貼文、Twitter / X、Threads、GitHub README、官網文案、Blog、Email campaign、媒體稿、Pitch deck、公開演講稿
+**要遵守：** LinkedIn 貼文、Twitter / X、Threads、GitHub README、**GitHub Release notes**、官網文案、Blog、Email campaign、媒體稿、Pitch deck、公開演講稿、產品 in-app 文案、公開 issue / PR 描述
 
-**不需要遵守：** 內部文件、Linear / Jira issue、Slack 內部訊息、Notion 內部筆記、memo、agent 之間的協作紀錄
+**判斷原則**：只要這段文字**會被 founder 以外的人看到**，就屬於「對外公開」，規則適用。不確定時視為適用。
+
+**不需要遵守：** 內部文件、Linear / Jira issue（內部）、Slack 內部訊息、Notion 內部筆記、memo、agent 之間的協作紀錄
 
 ---
 

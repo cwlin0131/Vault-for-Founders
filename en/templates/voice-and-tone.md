@@ -28,9 +28,11 @@ A set of writing rules that all AIs should read before drafting public content f
 
 ## Scope
 
-**Apply to:** LinkedIn posts, Twitter / X, Threads, GitHub READMEs, landing page copy, blogs, email campaigns, press releases, pitch decks, speaking engagement bios.
+**Apply to:** LinkedIn posts, Twitter / X, Threads, GitHub READMEs, **GitHub Release notes**, landing page copy, blogs, email campaigns, press releases, pitch decks, speaking engagement bios, in-app product copy, public issue / PR descriptions.
 
-**Don't apply to:** Internal docs, Linear / Jira issues, Slack DMs, Notion notes, memos, agent-to-agent coordination files.
+**Judgment rule**: if the text will be seen by anyone other than the founder, it counts as public. When unsure, treat it as public.
+
+**Don't apply to:** Internal docs, Linear / Jira issues (internal), Slack DMs, Notion notes, memos, agent-to-agent coordination files.
 
 ---
 

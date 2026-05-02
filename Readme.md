@@ -161,7 +161,9 @@ Your Vault doesn't need to look exactly like this. Add or remove folders based o
 
 ## Credits
 
-The concept for this knowledge base was inspired by [**Che-Yu Wu**](https://portaly.cc/cheyuwu)'s [Muse Crystal Seed](https://github.com/frank890417/muse-crystal-seed). Che-Yu Wu walked me through how to give AI long-term memory and personality using structured files. Vault for Founders redesigns the architecture and role positioning for the founder use case.
+The original inspiration came from [**Andrej Karpathy**](https://github.com/karpathy)'s [LLM Wiki](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f) — a pattern for building personal knowledge bases that an LLM incrementally maintains as a structured, interlinked markdown wiki. Vault for Founders extends this thinking into a founder-specific knowledge architecture.
+
+The concept for this knowledge base was further shaped by [**Che-Yu Wu**](https://portaly.cc/cheyuwu)'s [Muse Crystal Seed](https://github.com/frank890417/muse-crystal-seed). Che-Yu Wu walked me through how to give AI long-term memory and personality using structured files. Vault for Founders redesigns the architecture and role positioning for the founder use case.
 
 ---
 

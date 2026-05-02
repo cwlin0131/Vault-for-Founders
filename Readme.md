@@ -1,181 +1,172 @@
-**[繁體中文](./README.md)** | **[English](en/README.md)**
+**[繁體中文](zh/README.md)** | **[English](./README.md)**
 
-# Vault for Founders — 打造合夥人等級的 AI Agent
+# Vault for Founders — Build a Cofounder-Level AI Agent
 
-> 作者：[CW 林啟維](https://portaly.cc/cwl) — [Portaly](https://portaly.cc) CEO & Founder
+> By [CW Lin](https://portaly.cc/cwl) — CEO & Founder of [Portaly](https://portaly.cc)
 > 
-> ==**這份文件可以直接丟給任何 AI 讀！**== 
-> 
-> 它會根據內容回答你的問題，也會帶你走過完整的安裝與設定流程。
+> **You can hand this entire document to any AI and it will guide you through setup.**
 
 ---
 
-## 給 AI Agent 的前言
+## For AI Agents
 
-如果你是一個 AI Agent，正在閱讀這份文件來協助你的使用者建立知識庫，以下是你需要知道的：
+If you're an AI Agent reading this to help a user build their knowledge base:
 
-Vault for Founders 是一套用 Obsidian + Git 管理 AI Agent 知識庫的架構。你的任務是協助使用者完成建置。結構和資料夾等機械性工作可以直接執行，但 identity、persona、context 這類核心內容需要跟使用者討論後再寫入，不能是模板填空。
+Vault for Founders is a framework for managing an AI Agent's knowledge base using Obsidian + Git. Your job is to help the user set it up. Folder structures and scaffolding can be done directly, but core content like identity, persona, and context must be discussed with the user first — no template fill-in-the-blanks.
 
-**建議閱讀順序：**
+**Suggested reading order:**
 
-1. 讀完這份 README，了解整體架構和設計思路
-2. 讀 [setup-guide.md](zh/setup-guide.md)，了解完整的安裝與建置步驟
-3. 讀 [architecture.md](zh/architecture.md)，了解資料夾職責與設計取捨
-4. 用 [templates/](zh/templates/) 裡的模板幫使用者建立 Vault
-5. **特別注意**：`agent-persona.md` 跟 `voice-and-tone.md` 是深度個人化的內容，**不能填空模板**。要跟著模板內寫的討論流程，帶使用者一層一層討論出他自己的答案
-6. 建置完成後，讀 [optimization-guide.md](zh/optimization-guide.md)，協助使用者優化 Vault 的檢索效率（索引、檔名、標籤、記憶清洗）
-
----
-
-## 這是什麼
-
-Vault for Founders 是一套讓創業者從零建立 AI 知識庫的完整框架，包含為什麼這樣做、怎麼做、以及可以直接拿去用的模板。
-
-當你開始讓 AI 幫你處理越來越多事情，它需要一個地方「了解你」：你的背景、公司狀況、過去的決策、工作流程。這就是知識庫。
-
-這份文件裡會不斷提到 **Cub**。你可以把 Cub 想成你的 AI 合夥人、二把手。
-
-它不是一個聽指令的工具，而是一個累積了你所有決策脈絡、能跟你討論、挑戰你想法、幫你做判斷的夥伴。當你照著這份指南建完自己的 Vault，你的 AI 也會變成你的 Cub。
-
-### 名詞解釋
-
-如果你沒有技術背景，這幾個詞會一直出現，先認識一下：
-
-- **Vault** 就是一個資料夾，裡面放的都是純文字檔（.md 格式）。你可以用 Obsidian 打開它、瀏覽、編輯，就像一個筆記本。它同時也是 AI 的記憶來源，AI 讀這些檔案來理解你是誰、你的公司在做什麼、你做過什麼決策。
-
-- **Git** 是一個版本控制工具。每次你修改檔案，Git 會記錄「誰改了什麼、什麼時候改的」，讓你隨時可以回到任何一個歷史版本。它不是雲端硬碟，而是一套追蹤變更的系統。
-
-- **Repo**（Repository）就是一個被 Git 追蹤的資料夾。你的整個 Vault 就是一個 repo，所有檔案的新增、修改、刪除都會被記錄下來，同步到 GitHub 上作為備份。
+1. Read this README for the overall architecture and philosophy
+2. Read [setup-guide.md](en/setup-guide.md) for step-by-step installation
+3. Read [architecture.md](en/architecture.md) for design decisions and trade-offs
+4. Use [templates/](en/templates/) to scaffold the user's Vault
+5. **Important**: `agent-persona.md` and `voice-and-tone.md` are deeply personal. **Do not fill them in like a form.** Follow the discussion flow inside each template to walk the user through their own answers, layer by layer.
+6. After setup, read [optimization-guide.md](en/optimization-guide.md) to help the user optimize retrieval efficiency (indexing, naming, tagging, memory cleanup)
 
 ---
 
-## 為什麼要建自己的 Vault
+## What Is This
 
-![Founder's Vault — Before and After](vault-zh01.png)
+Vault for Founders is a complete framework for founders to build an AI knowledge base from scratch — including why, how, and ready-to-use templates.
 
-在未來的世界裡，我們會跟 AI 討論越來越多事情：產品策略、市場判斷、財務規劃、人事決策。這些對話會累積出大量的 context、個人知識、獨家資料。能不能有效管理這些知識，會是你能否隨著 AI 一起 scale 的最大關鍵。
+As you start delegating more to AI — product strategy, market analysis, financial planning, hiring decisions — it needs a place to "know you": your background, your company, your past decisions, your workflows. That place is your Vault.
 
-如果這些知識不會消失、可以持續累積，對創辦人來說，它就會長成一個超級合夥人。一個比任何人都了解你公司全貌的夥伴，而且 24 小時在線、不會離職。
+Throughout this guide, we'll refer to **Cub** — think of it as your AI cofounder, your second-in-command.
 
-但為什麼不直接用 Claude 或 ChatGPT 內建的記憶就好？因為：
+It's not a tool that follows instructions. It's a partner that accumulates all your decision context, discusses ideas with you, challenges your thinking, and helps you make better calls. When you finish building your Vault, your AI becomes your Cub.
 
-- **平台鎖定**：你的記憶存在 Claude 裡，GPT 讀不到，反之亦然。換工具等於失憶
-- **不透明**：你不知道它到底記了什麼、記對了沒有、什麼時候會被刪掉或摘要掉
-- **脆弱**：沒有版本控制，記錯了無法回溯，帳號出問題一切歸零
-- **無法擴展**：你沒辦法決定知識的結構，所有東西混在一起，越多越亂
+### Key Terms
 
-當你只是拿 AI 聊天時這些都無所謂，但當你開始把公司的核心決策脈絡交給它，這些風險就不能忽視了。
+If you don't have a technical background, here are a few terms that come up frequently:
 
-自建 Vault 的好處是：它是你自己的檔案，存在你自己的電腦上，可以跨帳號、跨 AI、跨機台。
+- **Vault** is just a folder containing plain text files (.md format). You can open it in Obsidian to browse and edit, like a notebook. It's also the AI's memory source — the AI reads these files to understand who you are, what your company does, and what decisions you've made.
 
-今天給 Claude Cowork 讀、明天給 OpenClaw 用、後天出了更好的工具直接搬過去。任何 AI Agent 加上你的 Vault，馬上就變成你的專屬 Agent。AI 工具會一直換，但你的 Vault 會一直跟著你。
+- **Git** is a version control tool. Every time you modify a file, Git records who changed what and when, so you can always go back to any previous version. It's not cloud storage — it's a change tracking system.
 
-***對我個人而言，當我理解 Vault 的時那一刻，我就為原本的資料儲存方式感到不安。***
+- **Repo** (Repository) is a folder tracked by Git. Your entire Vault is a repo — every file addition, edit, and deletion is recorded and synced to GitHub as a backup.
 
 ---
 
-## 為什麼用 Obsidian + Git
+## Why Build Your Own Vault
 
-![Founder's Vault Structure — 創業者的 AI 金庫架構](vault-zh02.png)
+![Founder's Vault — Before and After](vault-en01.png)
 
-創辦人的決策脈絡散落在 Notion、Slack、你的腦袋裡，每次跟 AI 對話都要重新講一遍。Vault 把這些結構化，讓 AI 每次都能帶著完整記憶上線。
+In the near future, we'll discuss increasingly important things with AI: product strategy, market bets, financial planning, people decisions. These conversations generate massive amounts of context, personal knowledge, and proprietary data. Whether you can effectively manage this knowledge determines whether you can scale alongside AI.
 
-為什麼不用 Notion 或 Google Docs？因為知識庫的主要讀者是 AI，不是人：
+If this knowledge never disappears and keeps compounding, it grows into a super-cofounder for you — a partner that understands your entire company better than anyone, available 24/7, and never quits.
 
-- Notion / Google Docs 需要 API 串接，Agent 無法直接讀取
-- 沒有版本控制，改壞了很難回溯
-- 資料被鎖在平台上，換工具等於重來
+So why not just use Claude or ChatGPT's built-in memory? Because:
 
-**Obsidian** 是本機的 Markdown 編輯器，所有筆記都是你電腦裡的 `.md` 檔案，Agent 直接讀取，零 API 成本。**Git** 負責版本控制和備份，搭配 GitHub 同步，換電腦一行指令搞定。
+- **Platform lock-in**: Your memory lives in Claude, GPT can't read it, and vice versa. Switching tools means starting from zero
+- **Opaque**: You don't know what it actually remembers, whether it's accurate, or when it gets deleted or summarized away
+- **Fragile**: No version control — if it gets something wrong, you can't roll back. Account issues wipe everything
+- **Can't scale**: You can't decide how knowledge is structured. Everything gets mixed together, and more means messier
 
-*如果你是超級個體、自由工作者，想建立的是「個人 AI 靈魂」，可以參考 Che-Yu Wu 吳哲宇 的 [Muse Crystal Seed 晶種指南](https://github.com/frank890417/muse-crystal-seed)*
+When you're just chatting with AI, none of this matters. But when you start entrusting it with your company's core decision context, these risks can't be ignored.
+
+The advantage of a self-built Vault: it's your own files, on your own machine, portable across accounts, across AI tools, across devices.
+
+Use it with Claude Cowork today, OpenClaw tomorrow, whatever comes next — just point the new tool at your Vault. AI tools will keep changing, but your Vault stays with you.
 
 ---
 
-## 怎麼建
+## Why Obsidian + Git
 
-把這個 GitHub repo 的連結丟給你的 AI，請它帶你做：
+![Founder's Vault Structure](vault-en02.png)
+
+A founder's decision context is scattered across Notion, Slack, and your own head. Every new AI conversation starts from scratch. A Vault structures all of this so your AI starts every session with full memory.
+
+Why not Notion or Google Docs? Because the primary reader of your knowledge base is AI, not humans:
+
+- Notion / Google Docs require API integrations — Agents can't read them directly
+- No version control — hard to roll back mistakes
+- Data is locked in the platform — switching tools means starting over
+
+**Obsidian** is a local Markdown editor. All your notes are `.md` files on your computer — Agents read them directly, zero API cost. **Git** handles version control and backup. Paired with GitHub sync, moving to a new machine is one command.
+
+---
+
+## How to Build
+
+Hand this GitHub repo link to your AI and ask it to guide you:
 
 👉 https://github.com/cwlin0131/Vault-for-Founders
 
-你可以直接複製這段 prompt 給 AI：
+You can copy this prompt directly:
 
 ```
-請閱讀這份 GitHub repo 的內容：https://github.com/cwlin0131/Vault-for-Founders
-然後帶我從零開始建立自己的 AI 知識庫。
-結構和資料夾你可以直接幫我建，但 identity（我是誰）、persona（AI 的角色）、context（我的公司和產品）這些核心內容，請跟我討論後再寫入。
+Read this GitHub repo: https://github.com/cwlin0131/Vault-for-Founders
+Then guide me through building my own AI knowledge base from scratch.
+You can create the folder structure directly, but for identity (who I am), persona (the AI's role), and context (my company and product), discuss with me before writing anything.
 ```
 
-詳細的安裝步驟也可以參考 [setup-guide.md](zh/setup-guide.md)。
+For detailed steps, see [setup-guide.md](en/setup-guide.md).
 
 ---
 
-## Repo 結構
+## Repo Structure
 
 ```
-├── README.md                 ← 你正在讀的這份
-├── zh/                       ← 繁體中文完整文件
-│   ├── setup-guide.md        ← 完整建置手冊
-│   ├── architecture.md       ← 架構設計與取捨
-│   ├── build-log.md          ← 建置紀錄
-│   ├── optimization-guide.md ← 持續優化指南
-│   └── templates/            ← 可直接使用的模板（persona、記憶、Cowork 指令、文稿風格、同步設定）
-├── en/                       ← English documentation
-│   ├── README.md             ← Full English guide
-│   ├── setup-guide.md        ← Setup guide
-│   ├── architecture.md       ← Architecture design
-│   ├── optimization-guide.md ← Optimization guide
-│   └── templates/            ← Ready-to-use templates (persona, memory, Cowork instructions, voice, sync)
+├── README.md                 ← You're reading this
+├── setup-guide.md            ← Complete setup guide
+├── architecture.md           ← Architecture design and trade-offs
+├── optimization-guide.md     ← Post-setup optimization guide (indexing, naming, tagging, memory cleanup)
+│
+└── templates/
+    ├── vault-readme.md       ← Vault index template
+    ├── agent-persona.md      ← Agent persona template (Identity + Soul + Persona, 3 layers)
+    ├── memory-summary.md     ← Long-term memory summary template
+    ├── after-action.md       ← After-action review template
+    ├── cowork-instructions.md ← Cowork Global Instructions template (with Forced Rules section)
+    ├── voice-and-tone.md     ← Writing rules template for public content (avoid AI tell-tales)
+    ├── gitattributes.md      ← .gitattributes config template (for multi-machine sync)
+    └── gitignore.md          ← .gitignore config template (ignore .obsidian/ and local files)
 ```
 
 ---
 
-## 建完會長什麼樣
+## What It Looks Like When Done
 
-這是我自己的 Vault 結構，供參考：
+Here's an example Vault structure for reference:
 
 ```
-CW Vault/
-├── README.md                 ← Vault 索引
-├── cub-persona.md            ← Cub 人格與協作方式
-├── memory-summary.md         ← 長期記憶摘要
-├── identity/                 ← 我是誰、決策風格
-├── context/                  ← 公司背景、產品策略
-├── memory/                   ← 每筆決策紀錄
-├── sop/                      ← 操作流程（Git、收官）
-├── operations/               ← 公司營運資料
-├── projects/                 ← 進行中的項目
-├── people/                   ← 重要聯絡人
-└── skills/                   ← AI Agent 的技能檔案
+Your Vault/
+├── README.md                 ← Vault index
+├── agent-persona.md          ← Agent persona and collaboration style
+├── memory-summary.md         ← Long-term memory summary
+├── identity/                 ← Who you are, decision style
+├── context/                  ← Company background, product strategy
+├── memory/                   ← Decision records
+├── sop/                      ← Standard operating procedures
+├── operations/               ← Company operations data
+├── projects/                 ← Active projects
+├── people/                   ← Key contacts
+└── skills/                   ← AI Agent skill files
 ```
 
-你的 Vault 不需要長得一模一樣，根據需求增減資料夾就好。
+Your Vault doesn't need to look exactly like this. Add or remove folders based on your needs.
 
 ---
 
-## 工具鏈
+## Tool Stack
 
-| 工具 | 用途 |
-|------|------|
-| [Obsidian](https://obsidian.md) | 寫筆記、管理 Vault |
-| [Obsidian Git](https://github.com/Vinzent03/obsidian-git) 外掛 | 自動同步到 GitHub |
-| [Claude Cowork](https://claude.ai) | 在電腦前時讀寫 Vault |
-| [Claude Code](https://docs.anthropic.com/en/docs/claude-code) | 開發者用的 CLI agent（選用） |
+| Tool | Purpose |
+|------|---------|
+| [Obsidian](https://obsidian.md) | Write notes, manage your Vault |
+| [Obsidian Git](https://github.com/Vinzent03/obsidian-git) plugin | Auto-sync to GitHub |
+| [Claude Cowork](https://claude.ai) | Read/write Vault when at your desk |
+| [Claude Code](https://docs.anthropic.com/en/docs/claude-code) | CLI agent for developers (optional) |
 
 ---
 
-## 延伸資源
+## Credits
 
-- [Obsidian Git 外掛](https://github.com/Vinzent03/obsidian-git)：自動同步
-
-### 特別感謝
-
-這個知識庫的概念啟蒙來自 [**Che-Yu Wu 吳哲宇**](https://portaly.cc/cheyuwu) 打造的 [Muse Crystal Seed 晶種指南](https://github.com/frank890417/muse-crystal-seed)。Che-Yu Wu 吳哲宇跟我詳細說明與示範了如何用結構化的方式讓 AI 擁有長期記憶與人格。Vault for Founders 在他的基礎上，針對創業者的場景重新設計了架構與角色定位。
+The concept for this knowledge base was inspired by [**Che-Yu Wu**](https://portaly.cc/cheyuwu)'s [Muse Crystal Seed](https://github.com/frank890417/muse-crystal-seed). Che-Yu Wu walked me through how to give AI long-term memory and personality using structured files. Vault for Founders redesigns the architecture and role positioning for the founder use case.
 
 ---
 
 ## License
 
-本專案採用 [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) 授權。你可以自由使用、修改、商用，只要標註出處：
+Licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Free to use, modify, and commercialize with attribution:
 
-> Based on [Vault for Founders](https://github.com/cwlin0131/Vault-for-Founders) by CW（林啟維）
+> Based on [Vault for Founders](https://github.com/cwlin0131/Vault-for-Founders) by CW Lin

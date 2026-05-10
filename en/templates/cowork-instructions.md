@@ -52,7 +52,7 @@ If you want a more complete "nothing falls through the cracks" architecture, sta
 
 1. **First layer (active trigger)**: Global Instructions Forced Rules ← this file
 2. **Second layer (safety net)**: After-action SOP (`after-action.md` template) checks again at task close
-3. **Third layer (periodic health check)**: A vault-audit SOP that periodically scans the README index for drift — see [vault-audit.md](vault-audit.md)
+3. **Third layer (periodic health check)**: A custom vault-audit SOP that periodically scans the README index for drift (not included in this template set, build your own when needed)
 4. **Background discipline**: Forced Rules section in the Vault README
 
 All four layers stacked minimize the miss rate. **You don't need all of them day one.** Set up the Global Instructions layer first. If you find rules still slip through, add the next layer.

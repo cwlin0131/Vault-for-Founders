@@ -117,6 +117,22 @@ Core files explained:
 
 **voice-and-tone.md** (optional but recommended) captures writing rules for public-facing content. Used for LinkedIn, README, press, etc. Prevents AI from generating content that "reads like AI wrote it."
 
+**decision-style.md** (optional, recommended after a few weeks) — your operating principles for decisions: how you weigh options, where you get stuck, what "good enough" means. The template lives at [templates/decision-style.md](templates/decision-style.md). Like `agent-persona.md`, work through it in conversation rather than filling it like a form.
+
+### Naming convention for `projects/`
+
+Use `YYYY-MM-topic/` so the Agent (and you) can sort and find projects at a glance. Generic shape:
+
+```
+projects/
+├── YYYY-MM-launch-prep/        ← e.g., a product launch you're coordinating
+├── YYYY-MM-conference-trip/    ← e.g., a multi-day networking trip
+├── YYYY-MM-fundraising/        ← e.g., investor outreach + deck iteration
+└── YYYY-MM-partner-collab/     ← e.g., a joint project with another team
+```
+
+The date prefix isn't strict — use the month the project starts, not "this month." When a project closes, you can leave it (history) or move it to `projects/archive/`.
+
 Templates are available in the [templates/](templates/) folder.
 
 ---

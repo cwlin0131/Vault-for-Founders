@@ -116,6 +116,7 @@ For detailed steps, see [setup-guide.md](setup-guide.md).
     ├── memory-summary.md     ← Long-term memory summary template
     ├── after-action.md       ← After-action review template
     ├── cowork-instructions.md ← Cowork Global Instructions template (with Forced Rules section)
+    ├── openclaw-instructions.md ← OpenClaw Global Instructions template (scoped write + auto-load behavior)
     ├── vault-audit.md         ← Vault audit SOP template (third defense layer — periodic index integrity check)
     ├── voice-and-tone.md     ← Writing rules template for public content (avoid AI tell-tales)
     ├── gitattributes.md      ← .gitattributes config template (for multi-machine sync)
@@ -154,6 +155,7 @@ Your Vault doesn't need to look exactly like this. Add or remove folders based o
 | [Obsidian](https://obsidian.md) | Write notes, manage your Vault |
 | [Obsidian Git](https://github.com/Vinzent03/obsidian-git) plugin | Auto-sync to GitHub |
 | [Claude Cowork](https://claude.ai) | Read/write Vault when at your desk |
+| OpenClaw | Coding agent with scoped write access — see [openclaw-instructions.md](templates/openclaw-instructions.md) |
 | [Claude Code](https://docs.anthropic.com/en/docs/claude-code) | CLI agent for developers (optional) |
 
 ---

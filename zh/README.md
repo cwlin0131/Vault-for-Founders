@@ -123,6 +123,7 @@ Vault for Founders 是一套讓創業者從零建立 AI 知識庫的完整框架
     ├── memory-summary.md     ← 長期記憶摘要模板
     ├── after-action.md       ← 收官流程模板
     ├── cowork-instructions.md ← Cowork Global Instructions 設定模板（含強制規則段）
+    ├── openclaw-instructions.md ← OpenClaw Global Instructions 模板（限定寫入範圍 + 自動載入行為）
     ├── vault-audit.md         ← Vault audit SOP 模板（第三道防禦——定期索引完整性檢查）
     ├── voice-and-tone.md     ← 對外公開文稿的語言規則模板（避免 AI 味）
     ├── gitattributes.md      ← .gitattributes 設定檔模板（多機同步用）
@@ -161,6 +162,7 @@ CW Vault/
 | [Obsidian](https://obsidian.md) | 寫筆記、管理 Vault |
 | [Obsidian Git](https://github.com/Vinzent03/obsidian-git) 外掛 | 自動同步到 GitHub |
 | [Claude Cowork](https://claude.ai) | 在電腦前時讀寫 Vault |
+| OpenClaw | Coding agent，限定寫入範圍 —— 見 [openclaw-instructions.md](templates/openclaw-instructions.md) |
 | [Claude Code](https://docs.anthropic.com/en/docs/claude-code) | 開發者用的 CLI agent（選用） |
 
 ---

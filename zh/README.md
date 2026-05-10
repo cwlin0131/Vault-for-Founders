@@ -114,7 +114,6 @@ Vault for Founders 是一套讓創業者從零建立 AI 知識庫的完整框架
 ├── README.md                 ← 你正在讀的這份
 ├── setup-guide.md            ← 完整建置手冊（給人讀的）
 ├── architecture.md           ← 架構設計：資料夾職責、啟動流程、設計取捨
-├── build-log.md              ← 我的建置紀錄（7 個 Phase）
 ├── optimization-guide.md     ← 建完之後的持續優化指南（索引、檔名、標籤、記憶清洗）
 │
 └── templates/

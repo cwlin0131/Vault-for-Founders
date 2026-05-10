@@ -1,0 +1,17 @@
+# Obsidian local settings (app preferences, plugins, hotkeys, graph, workspace, etc.)
+# Not shared across machines; each machine manages its own.
+.obsidian/
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+desktop.ini
+
+# Editor scratch files
+*.swp
+*.swo
+*~
+.vscode/
+.idea/

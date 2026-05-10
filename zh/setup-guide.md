@@ -113,6 +113,22 @@ git branch -M main
 
 **voice-and-tone.md**（選用但推薦）是對外公開文稿的寫作規則。LinkedIn、README、媒體稿等場景用，避免 AI 寫出「一看就是 AI 寫的」內容。
 
+**decision-style.md**（選用，建議用了幾週後再做）—— 你決策的運作原則：怎麼權衡選項、容易在哪卡住、什麼是「夠好」。模板在 [templates/decision-style.md](templates/decision-style.md)。跟 `agent-persona.md` 一樣，要用討論的方式做，不要當填空題。
+
+### `projects/` 命名慣例
+
+用 `YYYY-MM-topic/` 格式，這樣 Agent 跟你都能一眼排序找到。實際範例：
+
+```
+projects/
+├── 2026-04-yc-sr-applications/   ← YC Summer & Reject 申請準備
+├── 2026-04-sf-trip/              ← 舊金山 networking trip
+├── 2026-04-poc-showcase/         ← POC demo 活動
+└── 2026-04-tony-insforge-collab/ ← 跟特定人的合作項目
+```
+
+日期前綴不用很嚴格 — 用 project 開始的月份，不是「這個月」。Project 結束後可以留著（當歷史），或搬到 `projects/archive/`。
+
 模板可以在 [templates/](templates/) 資料夾裡找到。
 
 ---

@@ -125,7 +125,9 @@ Vault for Founders 是一套讓創業者從零建立 AI 知識庫的完整框架
     ├── cowork-instructions.md ← Cowork Global Instructions 設定模板（含強制規則段）
     ├── openclaw-instructions.md ← OpenClaw Global Instructions 模板（限定寫入範圍 + 自動載入行為）
     ├── vault-audit.md         ← Vault audit SOP 模板（第三道防禦——定期索引完整性檢查）
+    ├── git-workflow.md       ← Day-2 git 操作 SOP（日常同步、換電腦、衝突救火）
     ├── voice-and-tone.md     ← 對外公開文稿的語言規則模板（避免 AI 味）
+    ├── decision-style.md     ← Identity 模板 — 你怎麼決策、在哪卡住（討論流程設計）
     ├── gitattributes.md      ← .gitattributes 設定檔模板（多機同步用）
     └── gitignore.md          ← .gitignore 設定檔模板（忽略 .obsidian/ 等本機檔）
 ```

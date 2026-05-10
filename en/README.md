@@ -118,7 +118,9 @@ For detailed steps, see [setup-guide.md](setup-guide.md).
     ├── cowork-instructions.md ← Cowork Global Instructions template (with Forced Rules section)
     ├── openclaw-instructions.md ← OpenClaw Global Instructions template (scoped write + auto-load behavior)
     ├── vault-audit.md         ← Vault audit SOP template (third defense layer — periodic index integrity check)
+    ├── git-workflow.md       ← Day-2 git operations SOP (sync, second machine, conflicts, recovery)
     ├── voice-and-tone.md     ← Writing rules template for public content (avoid AI tell-tales)
+    ├── decision-style.md     ← Identity template — how you decide, where you get stuck (discussion-flow based)
     ├── gitattributes.md      ← .gitattributes config template (for multi-machine sync)
     └── gitignore.md          ← .gitignore config template (ignore .obsidian/ and local files)
 ```

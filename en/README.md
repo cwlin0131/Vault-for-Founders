@@ -116,7 +116,6 @@ For detailed steps, see [setup-guide.md](setup-guide.md).
     ├── memory-summary.md     ← Long-term memory summary template
     ├── after-action.md       ← After-action review template
     ├── cowork-instructions.md ← Cowork Global Instructions template (with Forced Rules section)
-    ├── vault-audit.md         ← Vault audit SOP template (third defense layer — periodic index integrity check)
     ├── voice-and-tone.md     ← Writing rules template for public content (avoid AI tell-tales)
     ├── gitattributes.md      ← .gitattributes config template (for multi-machine sync)
     └── gitignore.md          ← .gitignore config template (ignore .obsidian/ and local files)

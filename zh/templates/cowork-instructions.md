@@ -52,7 +52,7 @@ Skills 檔案在 [你的 Vault 名稱]/skills/ 資料夾，需要時從那裡讀
 
 1. **第一道（主動觸發）**：Global Instructions 強制規則 ← 這份檔案
 2. **第二道（安全網）**：收官 SOP（`after-action.md` 模板）再次檢查
-3. **第三道（定期體檢）**：自訂一份 vault audit SOP，定期掃 README 索引完整性（本模板未提供，可自行建立）
+3. **第三道（定期體檢）**：vault audit SOP，定期掃 README 索引完整性 —— 見 [vault-audit.md](vault-audit.md)
 4. **背景紀律**：Vault README 裡明列強制規則段
 
 四層疊起來，漏網率會降到最低。**初期不需要全部做**，先設好 Global Instructions 這一層，有發現規則常被漏掉再加下一層。

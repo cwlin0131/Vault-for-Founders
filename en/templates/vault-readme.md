@@ -38,11 +38,11 @@ Growing folders (memory/, projects/, and later hr/) each keep their own `INDEX.m
 
 ## 🚨 Forced Rules (not suggestions)
 
-### #1 — Index sync
+### #1: Index sync
 - **Add / delete a file** → update that folder's `INDEX.md` in the same response (for folders that have one)
 - **Add / delete a folder, or any structural change** → update this README (folder description + update log below)
 
-### #2 — Public content
+### #2: Public content
 Before drafting anything that will be seen by people other than [Your Name] (LinkedIn, GitHub README, release notes, press, pitch, public issues / PRs), read `identity/voice-and-tone.md` first. When unsure, treat it as public.
 
 Both rules are requirements for task completion. Second safety net: the after-action checklist re-verifies them at task close.

@@ -1,4 +1,4 @@
-# Vault Audit — Index Integrity Check
+# Vault Audit: Index Integrity Check
 
 > The third defense layer in the layered defense architecture (see [cowork-instructions.md](cowork-instructions.md)). Periodically scans whether the README index is in sync with the actual file structure, catching files that drifted out of the index or stale entries pointing nowhere.
 
@@ -8,7 +8,7 @@
 
 - **You ask for it**: "run a vault audit", "scan the vault for drift", "audit my index"
 - **The Agent suggests it**: after a burst of file changes, after a long stretch without one, or when the user reports the Agent reading the wrong files
-- **On a schedule** (optional): some founders make this a weekly task — auto-run it Sunday night and write the date into `memory-summary.md`
+- **On a schedule** (optional): some founders make this a weekly task: auto-run it Sunday night and write the date into `memory-summary.md`
 
 ---
 
@@ -26,13 +26,13 @@ find . -type f -name "*.md" \
   | sort
 ```
 
-(Adjust the excluded paths to match your setup — see "Ignore List" below.)
+(Adjust the excluded paths to match your setup; see "Ignore List" below.)
 
 ### Step 2: Extract Indexed Files
 
 Read the **root `README.md`** and list every file and folder it mentions.
 
-If you've added per-folder index files (e.g., `memory/INDEX.md`, `projects/INDEX.md`), read those too and merge into the indexed-files list. The basic framework only requires the root README — per-folder indexes are an optional optimization once a folder grows past ~10 files.
+If you've added per-folder index files (e.g., `memory/INDEX.md`, `projects/INDEX.md`), read those too and merge into the indexed-files list. The basic framework only requires the root README. Per-folder indexes are an optional optimization once a folder grows past ~10 files.
 
 ### Step 3: Compare and Find Drift
 
@@ -54,11 +54,11 @@ Indexed: M
 Drift: X
 
 ── 🔴 Not indexed (N items) ──
-- path/to/file1.md — [Agent's suggested one-line description]
-- path/to/file2.md — [Agent's suggested one-line description]
+- path/to/file1.md: [Agent's suggested one-line description]
+- path/to/file2.md: [Agent's suggested one-line description]
 
 ── 🟡 Stale README entries (N items) ──
-- path/to/old.md — file no longer exists
+- path/to/old.md: file no longer exists
 
 ── 💡 Suggestions ──
 - Which should be added to the index
@@ -88,8 +88,8 @@ Drift: X
 
 The following categories are normal even if they're not in the README:
 
-- **Scratch coordination files** at the Vault root — working notes you'll delete after the task is done
-- **One-off deliverables** at the Vault root — files you produced for a single purpose and won't reference again
+- **Scratch coordination files** at the Vault root: working notes you'll delete after the task is done
+- **One-off deliverables** at the Vault root: files you produced for a single purpose and won't reference again
 - Inside `skills/`: support files other than the main skill file (scripts, references, agents)
 - Obsidian local settings (`.obsidian/`)
 - Hidden / system folders (`.git/`, `.DS_Store`, etc.)
@@ -106,7 +106,7 @@ Without a periodic audit:
 - The Agent starts missing files because they're not in its map
 - You don't notice until the Agent confidently misses something important
 
-The audit isn't about catching the Agent — it's about catching yourself. After a few months, you'll have hundreds of files. The Forced Rules in your Global Instructions (first defense) and the After-action SOP (second defense) catch most cases at write time, but neither catches files you moved manually in Finder, or renamed in Obsidian without updating the index. That's what this third layer is for.
+The audit isn't about catching the Agent. It's about catching yourself. After a few months, you'll have hundreds of files. The Forced Rules in your Global Instructions (first defense) and the After-action SOP (second defense) catch most cases at write time, but neither catches files you moved manually in Finder, or renamed in Obsidian without updating the index. That's what this third layer is for.
 
 ---
 

@@ -6,13 +6,13 @@
 
 ## Design Principles
 
-This architecture is built for founders. A founder's interaction with AI goes beyond chat or personal knowledge management — it involves company operations, product strategy, hiring, networking, and project management. The architecture needs to cover both "personal" and "company" dimensions.
+This architecture is built for founders. A founder's interaction with AI goes beyond chat or personal knowledge management. It involves company operations, product strategy, hiring, networking, and project management. The architecture needs to cover both "personal" and "company" dimensions.
 
 Core trade-offs:
 
-- **Less is more** — Folders and files are created only when needed, not pre-scaffolded as empty shells
-- **Agent is the primary reader** — Structure, naming, and indexing prioritize LLM retrieval efficiency over human browsing habits
-- **One file, one responsibility** — Persona settings, memory summaries, and company context are each independent, never mixed
+- **Less is more**: Folders and files are created only when needed, not pre-scaffolded as empty shells
+- **Agent is the primary reader**: Structure, naming, and indexing prioritize LLM retrieval efficiency over human browsing habits
+- **One file, one responsibility**: Persona settings, memory summaries, and company context are each independent, never mixed
 
 ---
 
@@ -22,7 +22,7 @@ Core trade-offs:
 
 | File | Responsibility |
 |------|----------------|
-| README.md | Vault index — the Agent uses this map to decide what to read |
+| README.md | Vault index: the Agent uses this map to decide what to read |
 | agent-persona.md | Agent's personality, collaboration style, communication norms |
 | memory-summary.md | Distilled long-term memory: current focus, major decisions, lessons |
 
@@ -44,7 +44,7 @@ These three files are read on every Agent startup. Everything else is read as ne
 | operations/ | Hard operational data (incorporation, banking, taxes) | When you have operations data |
 | hr/ | Hiring and people, organized by cohort | When you start hiring |
 | projects/ | Active projects (trips, events, market plans) | When you have multi-day projects |
-| people/ | Key contacts — background and interaction notes | When your network gets complex |
+| people/ | Key contacts: background and interaction notes | When your network gets complex |
 
 ---
 
@@ -90,10 +90,10 @@ Re-run this check every time you add to any of the three files. Moving something
 
 A single "keep the index in sync" instruction is not reliable: the Agent will miss it, and you will forget to check. Stack four layers instead:
 
-1. **Active — Forced Rules in Global Instructions**: sync indexes in the same response that changed the files; read voice-and-tone before drafting anything public
-2. **Safety net — After-action review**: at task close, re-check that indexes and related docs were updated ([templates/after-action.md](templates/after-action.md))
-3. **Periodic checkup — Vault audit**: on demand or on a schedule, compare actual files against the indexes ([templates/vault-audit.md](templates/vault-audit.md))
-4. **Background discipline — Forced Rules in the vault README itself**: the Agent re-reads the rules on every startup ([templates/vault-readme.md](templates/vault-readme.md))
+1. **Active (Forced Rules in Global Instructions)**: sync indexes in the same response that changed the files; read voice-and-tone before drafting anything public
+2. **Safety net (After-action review)**: at task close, re-check that indexes and related docs were updated ([templates/after-action.md](templates/after-action.md))
+3. **Periodic checkup (Vault audit)**: on demand or on a schedule, compare actual files against the indexes ([templates/vault-audit.md](templates/vault-audit.md))
+4. **Background discipline (Forced Rules in the vault README itself)**: the Agent re-reads the rules on every startup ([templates/vault-readme.md](templates/vault-readme.md))
 
 Any single layer leaks. Four stacked layers bring drift close to zero.
 
@@ -114,9 +114,9 @@ Patterns that weren't in the original design but earned their place:
 
 Regardless of the tool (Cowork, OpenClaw, Claude Code), the Agent follows the same reading order on every startup:
 
-1. **README.md** — Understand the Vault's structure and map
-2. **agent-persona.md** — Understand its role and collaboration style
-3. **memory-summary.md** — Quickly grasp recent priorities
+1. **README.md**: Understand the Vault's structure and map
+2. **agent-persona.md**: Understand its role and collaboration style
+3. **memory-summary.md**: Quickly grasp recent priorities
 4. Read additional folders as needed for the task at hand
 
 This sequence is baked into the tool's custom instructions, so the Agent executes it automatically.
@@ -127,7 +127,7 @@ This sequence is baked into the tool's custom instructions, so the Agent execute
 
 Most AI knowledge base frameworks are designed for solo creators or freelancers, focused on personal life management and knowledge accumulation. Vault for Founders adds the company dimension that founders need: context, operations, hr, projects, people.
 
-Another difference: the Agent isn't just a memory store — it's a cofounder. The persona design doesn't just define tone and style. It defines when the Agent should challenge the founder's thinking and when to defer. This upgrades the Agent from a tool to a thinking partner.
+Another difference: the Agent isn't just a memory store. It's a cofounder. The persona design doesn't just define tone and style. It defines when the Agent should challenge the founder's thinking and when to defer. This upgrades the Agent from a tool to a thinking partner.
 
 ---
 

@@ -1,4 +1,4 @@
-# Vault Optimization Guide — Help Your Agent Find the Right Files Faster
+# Vault Optimization Guide: Help Your Agent Find the Right Files Faster
 
 > After building your Vault, retrieval efficiency degrades as files accumulate. This guide covers practical optimization techniques based on real experience.
 
@@ -17,7 +17,7 @@ The Agent's behavior on every startup: read README → decide which files are ne
 README is the first file the Agent reads on every startup. It uses this index to decide whether to open each file.
 
 **How to do it (small vault, under ~30 files):**
-- Don't just describe folders — go to the granularity of every single file, with a one-line summary each
+- Don't just describe folders; go to the granularity of every single file, with a one-line summary each
 - The summary describes the file's content, not a repetition of the filename
 - When you add, delete, or move files, update the README in sync
 
@@ -42,7 +42,7 @@ The Agent sees "company data" but doesn't know if it's incorporation docs, bank 
 ├── /operations
 │   └── corp-setup.md      ← Delaware C Corp incorporation data, EIN status, bank account setup
 ```
-The Agent immediately knows this is about incorporation — no need to open the file to check.
+The Agent immediately knows this is about incorporation. No need to open the file to check.
 
 ---
 
@@ -51,7 +51,7 @@ The Agent immediately knows this is about incorporation — no need to open the 
 Good filenames let the Agent decide whether to read a file just by looking at the file list, without relying on README or opening the file.
 
 **Naming rules:**
-- Avoid generic names — use descriptive filenames (`corp-setup.md` instead of `entity.md`)
+- Avoid generic names: use descriptive filenames (`corp-setup.md` instead of `entity.md`)
 - For files in the same category, use `topic-subtopic` format with the topic first (`product-roadmap.md`, `product-pricing.md`)
 - Memory files: use `YYYY-MM-DD_topic-summary.md` (dates for easy sorting)
 - Project folders: use `YYYY-MM-topic/`
@@ -70,13 +70,13 @@ Add YAML frontmatter at the top of every `.md` file so the Agent can assess a fi
 ---
 updated: 2026-04-15
 tags: [context, product, strategy]
-summary: 90-day expansion strategy — positioning, channels, pricing, milestones
+summary: 90-day expansion strategy covering positioning, channels, pricing, milestones
 ---
 ```
 
-- `updated` — Last modified date, so the Agent can judge information freshness
-- `tags` — Category labels for search and cross-referencing
-- `summary` — One-line summary, kept consistent with the README index description
+- `updated`: Last modified date, so the Agent can judge information freshness
+- `tags`: Category labels for search and cross-referencing
+- `summary`: One-line summary, kept consistent with the README index description
 
 **Don't add too many metadata fields.** The more fields you have, the higher the maintenance cost. You'll start skipping updates, and eventually the metadata becomes less accurate than the content itself. Three fields is enough.
 
@@ -89,7 +89,7 @@ summary: 90-day expansion strategy — positioning, channels, pricing, milestone
 **Cleanup rules:**
 - After completing a task, go back and update the result column or remove items that are no longer relevant
 - Periodically check for duplicates, outdated entries, or items whose status has changed
-- Review before deleting — confirm with yourself to avoid removing items that are still important but look old
+- Review before deleting: confirm with yourself to avoid removing items that are still important but look old
 
 **Suggested frequency:** Once a week, or after every major decision. Doesn't need to be too frequent, but can't be never.
 
@@ -97,7 +97,7 @@ summary: 90-day expansion strategy — positioning, channels, pricing, milestone
 
 ---
 
-## 5. Update-Log Rule — Stop Chronic Bloat (v2)
+## 5. Update-Log Rule: Stop Chronic Bloat (v2)
 
 Core files (README.md, memory-summary.md) tend to grow a tail of "last updated: ..." entries at the bottom. Each one looks harmless; two months later the Agent is paying for fifty of them on every startup.
 
@@ -121,19 +121,19 @@ If a passage is longer than ~5 lines AND not used every session, move it out and
 
 If you're doing multiple optimizations at once, follow this order:
 
-1. **Rename files first** — Change vague names to descriptive ones
-2. **Then write the README index and frontmatter** — Based on final filenames, so you don't have to do it twice
-3. **Run a verification pass last** — Confirm all internal links and references point to the new filenames
+1. **Rename files first**: Change vague names to descriptive ones
+2. **Then write the README index and frontmatter**: Based on final filenames, so you don't have to do it twice
+3. **Run a verification pass last**: Confirm all internal links and references point to the new filenames
 
-Rename first, then index — avoid double work.
+Rename first, then index, to avoid double work.
 
 ---
 
 ## When to Do This
 
-- **Right after building your Vault** — No rush. Accumulate some files first
-- **When you pass 10 files** — Worth investing in README index enhancement and frontmatter
-- **When a folder passes 10 files and keeps growing** — Give it an `INDEX.md` and shrink its README entry to one line
-- **When you notice the Agent opening wrong files** — The index isn't clear enough, time to optimize
-- **When the bottom of your README keeps growing** — Apply the update-log rule (section 5)
-- **Every time you add a new file** — Update the index and add frontmatter as you go. Building the habit is more effective than one big cleanup session
+- **Right after building your Vault**: No rush. Accumulate some files first
+- **When you pass 10 files**: Worth investing in README index enhancement and frontmatter
+- **When a folder passes 10 files and keeps growing**: Give it an `INDEX.md` and shrink its README entry to one line
+- **When you notice the Agent opening wrong files**: The index isn't clear enough, time to optimize
+- **When the bottom of your README keeps growing**: Apply the update-log rule (section 5)
+- **Every time you add a new file**: Update the index and add frontmatter as you go. Building the habit is more effective than one big cleanup session

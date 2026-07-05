@@ -1,8 +1,8 @@
-# Git Workflow SOP — Day-to-Day and Recovery
+# Git Workflow SOP: Day-to-Day and Recovery
 
 > Last updated: v1
 
-The setup-guide gets you started; this SOP covers what comes after — daily sync, second-machine setup, and how to dig out of conflicts. Save this in your Vault's `sop/` folder, and skim it whenever you forget the steps.
+The setup-guide gets you started; this SOP covers what comes after: daily sync, second-machine setup, and how to dig out of conflicts. Save this in your Vault's `sop/` folder, and skim it whenever you forget the steps.
 
 ---
 
@@ -82,7 +82,7 @@ The most common case: you edited file `X` on machine A, edited the same file on 
 ### Recovery steps
 
 1. **Stop editing on the conflicting machine.** Don't make it worse.
-2. In Obsidian's Git plugin, check for "merge conflict" notifications. Open the affected file — Git will have left conflict markers like:
+2. In Obsidian's Git plugin, check for "merge conflict" notifications. Open the affected file. Git will have left conflict markers like:
    ```
    <<<<<<< HEAD
    your local version
@@ -95,7 +95,7 @@ The most common case: you edited file `X` on machine A, edited the same file on 
 
 ### If it's beyond your repair
 
-If conflicts get tangled (e.g., dozens of files, binary files, you don't remember what you changed), the safer move is **back up your local copy elsewhere first**, then `git reset --hard origin/main` to match the remote, then manually re-apply your changes from the backup. Don't reset without backing up — it's destructive.
+If conflicts get tangled (e.g., dozens of files, binary files, you don't remember what you changed), the safer move is **back up your local copy elsewhere first**, then `git reset --hard origin/main` to match the remote, then manually re-apply your changes from the backup. Don't reset without backing up. It's destructive.
 
 ---
 
@@ -114,7 +114,7 @@ For local viewing in Obsidian Git: `Ctrl + P` → `git: open history view`.
 The setup-guide ships a starter `.gitignore`. Beyond that:
 
 - **Add to .gitignore**: temporary scratch files you don't want in version history, machine-specific config, anything sensitive that slipped in
-- **Don't add**: anything inside your main folders (`memory/`, `context/`, etc.) — those are the whole point of having a Vault
+- **Don't add**: anything inside your main folders (`memory/`, `context/`, etc.). Those are the whole point of having a Vault
 
 If you accidentally committed a file that should be ignored, see the next section.
 
@@ -131,7 +131,7 @@ If you committed something sensitive (API key, password, internal doc):
    git commit -m "remove sensitive file from tracking"
    git push
    ```
-3. **Important**: this only removes it from future commits. The file is still in past commits. If it's truly sensitive (like a leaked API key), **rotate the credential** — assume it's already public.
+3. **Important**: this only removes it from future commits. The file is still in past commits. If it's truly sensitive (like a leaked API key), **rotate the credential**: assume it's already public.
 4. For full purge from history (advanced): use `git filter-repo` or BFG Repo-Cleaner. Out of scope for this SOP.
 
 ---

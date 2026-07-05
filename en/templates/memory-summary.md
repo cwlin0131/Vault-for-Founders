@@ -48,6 +48,6 @@
 ## Maintenance Rules
 
 - Update weekly or after every major decision
-- Keep it concise — details stay in individual `memory/` records
+- Keep it concise: details stay in individual `memory/` records
 - Agent can proactively suggest updates to this file
 - This file is one of the three always-read files: any section longer than ~5 lines that isn't needed every session moves out to `identity/` or `sop/`, with a pointer left behind

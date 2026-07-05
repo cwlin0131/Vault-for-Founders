@@ -10,9 +10,9 @@
 
 Obsidian creates a `.obsidian/` folder inside your Vault, containing **machine-local preferences** (graph view, hotkeys, installed plugins, workspace tabs, etc.). These:
 
-- **Should not be shared across machines** — each machine has its own preferences
-- **Are modified by plugins automatically** — a major source of constant cross-machine conflicts
-- **Include plugin code itself** (e.g., `obsidian-git/main.js`) — plugin upgrades create massive diffs
+- **Should not be shared across machines**: each machine has its own preferences
+- **Are modified by plugins automatically**: a major source of constant cross-machine conflicts
+- **Include plugin code itself** (e.g., `obsidian-git/main.js`): plugin upgrades create massive diffs
 
 Operating systems also produce junk files (`.DS_Store`, `Thumbs.db`) that don't belong in your repo.
 
@@ -27,7 +27,7 @@ Operating systems also produce junk files (`.DS_Store`, `Thumbs.db`) that don't 
    git rm -r --cached .obsidian/
    git commit -m "chore: stop tracking .obsidian/ (local settings)"
    ```
-4. This doesn't delete `.obsidian/` from your disk — it just tells Git to ignore it going forward
+4. This doesn't delete `.obsidian/` from your disk. It just tells Git to ignore it going forward
 
 ## Config Content
 

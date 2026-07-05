@@ -41,7 +41,7 @@ git config --global user.name "your-github-username"
 
 ## Step 2: Install Obsidian
 
-Download from https://obsidian.md and install. When you open it, select "Create new vault," give it a name, and choose a save location. Remember the Vault path — you'll need it later.
+Download from https://obsidian.md and install. When you open it, select "Create new vault," give it a name, and choose a save location. Remember the Vault path. You'll need it later.
 
 ---
 
@@ -117,7 +117,7 @@ Core files explained:
 
 **voice-and-tone.md** (optional but recommended) captures writing rules for public-facing content. Used for LinkedIn, README, press, etc. Prevents AI from generating content that "reads like AI wrote it."
 
-**decision-style.md** (optional, recommended after a few weeks) — your operating principles for decisions: how you weigh options, where you get stuck, what "good enough" means. The template lives at [templates/decision-style.md](templates/decision-style.md). Like `agent-persona.md`, work through it in conversation rather than filling it like a form.
+**decision-style.md** (optional, recommended after a few weeks) covers your operating principles for decisions: how you weigh options, where you get stuck, what "good enough" means. The template lives at [templates/decision-style.md](templates/decision-style.md). Like `agent-persona.md`, work through it in conversation rather than filling it like a form.
 
 ### Naming convention for `projects/`
 
@@ -131,7 +131,7 @@ projects/
 └── YYYY-MM-partner-collab/     ← e.g., a joint project with another team
 ```
 
-The date prefix isn't strict — use the month the project starts, not "this month." When a project closes, you can leave it (history) or move it to `projects/archive/`.
+The date prefix isn't strict: use the month the project starts, not "this month." When a project closes, you can leave it (history) or move it to `projects/archive/`.
 
 One more thing to know for later: once a folder passes ~10 files and keeps growing (memory/, projects/, hr/ tend to), give it its own `INDEX.md` and shrink its README entry to one line. You don't need this on day one; see [optimization-guide.md](optimization-guide.md) when you get there.
 
@@ -147,7 +147,7 @@ git commit -m "init vault"
 git push -u origin main
 ```
 
-You may see a GitHub login prompt — just sign in. Once complete, check your GitHub repo page to confirm the files are uploaded.
+You may see a GitHub login prompt. Just sign in. Once complete, check your GitHub repo page to confirm the files are uploaded.
 
 ---
 
@@ -161,13 +161,13 @@ With this plugin, you don't need to run git commands manually. Obsidian will aut
 4. Install [Vinzent03/obsidian-git](https://github.com/Vinzent03/obsidian-git) → Enable
 5. In the plugin settings, set **Auto commit-and-sync interval** to `30` (auto-sync every 30 minutes)
 
-Once configured, just write in Obsidian — it handles the rest.
+Once configured, just write in Obsidian. It handles the rest.
 
 ---
 
 ## Daily Use
 
-- Write notes and documents in Obsidian — everything syncs automatically
+- Write notes and documents in Obsidian, and everything syncs automatically
 - To see change history, go to your GitHub repo and click "commits"
 - When switching machines: install Git and Obsidian, run `git clone your-repo-url`, then open that folder in Obsidian
 

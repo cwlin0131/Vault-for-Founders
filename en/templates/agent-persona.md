@@ -38,7 +38,7 @@ The nine sections below are **what you'll discuss with your AI and fill in toget
 
 ---
 
-# [Agent Name] [emoji] — [Your Name]'s AI [Role]
+# [Agent Name] [emoji]: [Your Name]'s AI [Role]
 
 > Last updated: YYYY/MM/DD
 

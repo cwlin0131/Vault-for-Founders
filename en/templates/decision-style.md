@@ -1,6 +1,6 @@
-# Decision Style — Identity Template
+# Decision Style: Identity Template
 
-> Save this as `identity/decision-style.md`. Like `agent-persona.md`, **don't fill it in like a form** — work through the discussion below with your AI, layer by layer. The point is to surface the *operating principles* behind your decisions, not generic personality traits.
+> Save this as `identity/decision-style.md`. Like `agent-persona.md`, **don't fill it in like a form**. Work through the discussion below with your AI, layer by layer. The point is to surface the *operating principles* behind your decisions, not generic personality traits.
 
 ---
 
@@ -9,13 +9,13 @@
 Your `decision-style.md` tells your AI:
 
 - How you weigh options (speed vs. completeness, intuition vs. analysis)
-- When you're prone to getting stuck — and what unblocks you
+- When you're prone to getting stuck, and what unblocks you
 - What "good enough" looks like to you, and what crosses the line into wasteful perfectionism
 - How you communicate when you've decided
 
 This is the file the AI reads before pushing back on a decision, before suggesting a "second option you haven't considered," and before deciding whether to challenge you or defer.
 
-The architecture doc says "founder's decision style" should be set up day one — this is the file it's talking about.
+The architecture doc says "founder's decision style" should be set up day one. This is the file it's talking about.
 
 ---
 
@@ -29,7 +29,7 @@ Pick one statement that feels closest to your default:
 - "I act fast on intuition, then refine as I learn."
 - "I gather a small group of trusted advisors before any major call."
 - "I think out loud and decide in conversation."
-- "Something else — let me describe it."
+- "Something else, let me describe it."
 
 Then unpack: what's your evidence? Recall a recent significant decision and walk your AI through how you actually made it.
 
@@ -43,14 +43,14 @@ What kinds of decisions reliably stall you?
 - Choosing between two roughly equal options
 - Something else
 
-Be specific about the *pattern* — when you tell your AI "I tend to over-research X type of decision," it can call that out next time you're doing it.
+Be specific about the *pattern*: when you tell your AI "I tend to over-research X type of decision," it can call that out next time you're doing it.
 
 ### Layer 3: What "good enough" means to you
 
 Two extremes:
 
-- **Maximalist**: "I push for the best possible outcome regardless of cost" — fragile when resources are tight
-- **Pragmatist**: "I optimize for the best outcome within finite resources" — the founder's default
+- **Maximalist**: "I push for the best possible outcome regardless of cost" (fragile when resources are tight)
+- **Pragmatist**: "I optimize for the best outcome within finite resources" (the founder's default)
 
 Most founders sit somewhere on this axis but lean one way. Where do *you* lean? And what's your tell that you've crossed into wasteful perfectionism?
 
@@ -77,7 +77,7 @@ tags: [identity, decision-style]
 summary: How I make decisions, where I get stuck, how the AI should respond
 ---
 
-# [Your name] — Decision Style
+# [Your name]: Decision Style
 
 > Last updated: YYYY/MM/DD
 
@@ -97,15 +97,15 @@ summary: How I make decisions, where I get stuck, how the AI should respond
 ---
 
 ## Where you get stuck
-[Specific patterns — not generic "indecision," but the actual shapes your stuck moments take]
+[Specific patterns: not generic "indecision," but the actual shapes your stuck moments take]
 
 ---
 
 ## To be added
-[Areas you haven't worked through yet — leadership style, external comms principles, long-term values, etc.]
+[Areas you haven't worked through yet: leadership style, external comms principles, long-term values, etc.]
 ```
 
-The "To be added" section is intentional. Don't try to fill everything in one sitting. Let your AI add to this file as it learns more about you over time — every after-action review is a chance to add a sentence.
+The "To be added" section is intentional. Don't try to fill everything in one sitting. Let your AI add to this file as it learns more about you over time. Every after-action review is a chance to add a sentence.
 
 ---
 
@@ -113,10 +113,10 @@ The "To be added" section is intentional. Don't try to fill everything in one si
 
 `decision-style.md` is one of several Identity files. Consider also:
 
-- `voice-and-tone.md` — how you write for public audiences (template included)
-- `recalibration-pattern.md` — how you adjust when something isn't working
-- `public-profile.md` — your bio, links, the version of you that appears on landing pages
-- `cofounder-role.md` — what you expect from a cofounder (helps the AI calibrate when to act *like* one)
+- `voice-and-tone.md`: how you write for public audiences (template included)
+- `recalibration-pattern.md`: how you adjust when something isn't working
+- `public-profile.md`: your bio, links, the version of you that appears on landing pages
+- `cofounder-role.md`: what you expect from a cofounder (helps the AI calibrate when to act *like* one)
 
 These are all optional. Build them when you find yourself explaining the same thing to your AI twice.
 

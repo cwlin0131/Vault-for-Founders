@@ -25,7 +25,7 @@ At the start of every new conversation, read these three files first:
 2. [Your Vault Name]/agent-persona.md
 3. [Your Vault Name]/memory-summary.md
 
-Skill files are in [Your Vault Name]/skills/ — read as needed.
+Skill files are in [Your Vault Name]/skills/. Read as needed.
 After reading, follow the role definition and collaboration style in agent-persona.md.
 
 ## Forced Rules (not suggestions; required for task completion)
@@ -44,7 +44,7 @@ Relying on the AI to just "remember" these rules over time is unreliable. In pra
 - Drafting public writing without checking voice rules → output doesn't sound like the founder
 - Finishing a task without capturing the decision → important context is lost
 
-Putting these as **Forced Rules at the Global Instructions level** (not buried in some SOP file) is currently the most reliable approach, because global instructions are **read at the start of every new conversation** — the highest-priority context.
+Putting these as **Forced Rules at the Global Instructions level** (not buried in some SOP file) is currently the most reliable approach, because global instructions are **read at the start of every new conversation**, the highest-priority context.
 
 ## Layered Defense (Advanced)
 
@@ -52,7 +52,7 @@ If you want a more complete "nothing falls through the cracks" architecture, sta
 
 1. **First layer (active trigger)**: Global Instructions Forced Rules ← this file
 2. **Second layer (safety net)**: After-action SOP (`after-action.md` template) checks again at task close
-3. **Third layer (periodic health check)**: A vault-audit SOP that periodically scans the README index for drift — see [vault-audit.md](vault-audit.md)
+3. **Third layer (periodic health check)**: A vault-audit SOP that periodically scans the README index for drift (see [vault-audit.md](vault-audit.md))
 4. **Background discipline**: Forced Rules section in the Vault README
 
 All four layers stacked minimize the miss rate. **You don't need all of them day one.** Set up the Global Instructions layer first. If you find rules still slip through, add the next layer.

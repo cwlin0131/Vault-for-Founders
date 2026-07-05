@@ -1,8 +1,23 @@
 # Memory Summary — 長期記憶摘要
 
-> 最後更新：YYYY/MM/DD
+> 最後更新：YYYY/MM/DD（改了什麼）
+> 前次更新：YYYY/MM/DD（改了什麼）
 >
 > Agent 每次啟動時快速掌握全貌用的精華版。詳細紀錄在 `memory/` 資料夾裡。
+> 📏 更新紀錄只留上面兩條，更早的搬 `sop/vault-changelog.md`。
+
+---
+
+## Sticky Reminders
+
+> Agent 每個 session 都必須放在心上的事：進行中的 P0/P1、有時效的 follow-up、常駐警告。
+
+- [ ] [例：P0 — 銀行申請審核中，MM/DD 前沒回音要追]
+- [ ] [例：P1 — MM/DD 前寫完上線公告草稿]
+
+**Sticky 規則：**
+- Sticky 不是 log。項目解決了，當次 response 內直接刪掉
+- 只放「每個 session 都需要注意」的事，其他放 todo 或對應 project 資料夾
 
 ---
 
@@ -35,3 +50,4 @@
 - 每週或每次重大決策後更新
 - 只放精華，細節留在 `memory/` 各筆紀錄裡
 - Agent 可以主動建議更新這份文件
+- 這份是每次必讀三檔之一：超過 5 行、又不是每個 session 都用到的段落，搬去 `identity/` 或 `sop/`，原地留 pointer

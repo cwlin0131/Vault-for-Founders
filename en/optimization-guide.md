@@ -16,10 +16,19 @@ The Agent's behavior on every startup: read README → decide which files are ne
 
 README is the first file the Agent reads on every startup. It uses this index to decide whether to open each file.
 
-**How to do it:**
+**How to do it (small vault, under ~30 files):**
 - Don't just describe folders — go to the granularity of every single file, with a one-line summary each
 - The summary describes the file's content, not a repetition of the filename
 - When you add, delete, or move files, update the README in sync
+
+**How to do it (growing vault), v2: layer the index.**
+
+The per-file README index stops scaling once folders start accumulating. Split your folders into two kinds:
+
+- **Slow-changing folders** (identity/, context/, operations/): keep listing them file by file in the README
+- **Growing folders** (memory/, projects/, hr/): give each its own `INDEX.md` with the full listing and status; the README keeps only a one-line entry pointing to it
+
+Trigger: a folder passes ~10 files and keeps growing → add an `INDEX.md`. New rule of thumb for sync: file added or deleted → update that folder's `INDEX.md`; folder added or removed (structural change) → update the root README. See [architecture.md](architecture.md) for the full rationale.
 
 **Bad example:**
 ```
@@ -84,6 +93,28 @@ summary: 90-day expansion strategy — positioning, channels, pricing, milestone
 
 **Suggested frequency:** Once a week, or after every major decision. Doesn't need to be too frequent, but can't be never.
 
+**Sticky reminders are not a log (v2).** If your memory-summary has a sticky/priority section, apply two rules: when an item is resolved, delete it in the same response (don't move it to a "done" pile inside the file), and never let status updates accumulate as history. History belongs in `memory/` records.
+
+---
+
+## 5. Update-Log Rule — Stop Chronic Bloat (v2)
+
+Core files (README.md, memory-summary.md) tend to grow a tail of "last updated: ..." entries at the bottom. Each one looks harmless; two months later the Agent is paying for fifty of them on every startup.
+
+**The rule:** keep only two entries, "last updated" and "previous update." When you add a new one, move the entry it displaces to `sop/vault-changelog.md` (template provided: [templates/vault-changelog.md](templates/vault-changelog.md)).
+
+Scope the changelog to structural events only: folder add/remove, core-file changes, reading-order changes, rule upgrades. Ordinary memory entries don't belong there.
+
+---
+
+## 6. Keep the Three Always-Read Files on a Diet (v2)
+
+README.md, agent-persona.md, and memory-summary.md are read on every startup, so every line in them is a recurring cost. Self-check whenever you add to any of the three:
+
+> Is this something the Agent must have fresh in mind **every** session?
+
+If a passage is longer than ~5 lines AND not used every session, move it out and leave a one-line pointer: mechanisms to `identity/`, procedures to `sop/`, change history to an `INDEX.md` or `sop/vault-changelog.md`.
+
 ---
 
 ## Execution Order Matters
@@ -102,5 +133,7 @@ Rename first, then index — avoid double work.
 
 - **Right after building your Vault** — No rush. Accumulate some files first
 - **When you pass 10 files** — Worth investing in README index enhancement and frontmatter
+- **When a folder passes 10 files and keeps growing** — Give it an `INDEX.md` and shrink its README entry to one line
 - **When you notice the Agent opening wrong files** — The index isn't clear enough, time to optimize
-- **Every time you add a new file** — Update the README and add frontmatter as you go. Building the habit is more effective than one big cleanup session
+- **When the bottom of your README keeps growing** — Apply the update-log rule (section 5)
+- **Every time you add a new file** — Update the index and add frontmatter as you go. Building the habit is more effective than one big cleanup session

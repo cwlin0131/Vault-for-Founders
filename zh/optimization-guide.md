@@ -16,10 +16,19 @@ Agent 每次啟動時的行為是：讀 README → 判斷需要哪些檔案 → 
 
 README 是 Agent 每次啟動必讀的第一份文件，它靠這份索引決定要不要開某個檔案。
 
-**做法：**
+**做法（小 Vault，30 個檔案以內）：**
 - 不只寫資料夾說明，要到「每個檔案」的粒度，每個檔案寫一句話摘要
 - 摘要寫的是檔案的內容，不是檔名的重複
 - 新增、刪除、搬移檔案時，同步更新 README
+
+**做法（Vault 長大之後）— 索引分層（v2）：**
+
+資料夾開始堆疊之後，「README 詳列到每個檔案」會撐不住。把資料夾分成兩種：
+
+- **變動慢的資料夾**（identity/、context/、operations/）：繼續在 README 逐檔詳列
+- **會堆疊的資料夾**（memory/、projects/、hr/）：各自建一份 `INDEX.md` 放完整清單和狀態，README 只留一行入口提示
+
+Trigger：資料夾超過大約 10 個檔案、而且會繼續長 → 加 `INDEX.md`。同步規則也跟著分層：新增／刪除檔案 → 改該資料夾的 `INDEX.md`；新增／刪除資料夾（結構性變動）→ 改 Root README。完整設計理由見 [architecture.md](architecture.md)。
 
 **反例：**
 ```
@@ -84,6 +93,28 @@ summary: 產品 90 天擴張策略：定位、通路、定價、里程碑
 
 **建議頻率：** 每週一次，或每次重大決策後。不需要太頻繁，但不能完全不做。
 
+**Sticky reminders 不是 log（v2）。** 如果你的 memory-summary 有 sticky／優先事項區，遵守兩條：項目解決了就在同一個 response 內直接刪掉（不要在檔案裡留一堆「已完成」）；狀態更新不要當歷史堆積。歷史屬於 `memory/` 的紀錄檔。
+
+---
+
+## 5. 更新 log 規則 — 阻止慢性肥大（v2）
+
+核心檔案（README.md、memory-summary.md）底部很容易長出一條一條的「最後更新：…」。每一條看起來都無害，兩個月後 Agent 每次啟動都在為五十條歷史付錢。
+
+**規則：** 只留兩條 —「最後更新」和「前次更新」。新增一條時，把被擠掉的那條搬進 `sop/vault-changelog.md`（模板：[templates/vault-changelog.md](templates/vault-changelog.md)）。
+
+changelog 只收結構性事件：資料夾增刪、核心檔案重大變動、閱讀順序調整、規則升級。一般 memory 紀錄不進這份。
+
+---
+
+## 6. 每次必讀的三檔要持續瘦身（v2）
+
+README.md、agent-persona.md、memory-summary.md 每次啟動都會被讀，裡面每一行都是重複收費。每次對三檔新增內容時 self-check 一次：
+
+> 這條是 Agent **每個** session 都必須 fresh in mind 的嗎？
+
+如果某段超過 5 行、又不是每個 session 都會用到，就搬走：行為機制 → `identity/`、操作流程 → `sop/`、變更紀錄 → 對應 `INDEX.md` 或 `sop/vault-changelog.md`，原地留一行 pointer。
+
 ---
 
 ## 執行順序很重要
@@ -102,5 +133,7 @@ summary: 產品 90 天擴張策略：定位、通路、定價、里程碑
 
 - **Vault 剛建好時** — 不用急，先累積一些檔案再說
 - **檔案超過 10 個時** — 開始值得做 README 索引強化和 frontmatter
+- **某個資料夾超過 10 個檔案而且還在長時** — 給它一份 `INDEX.md`，README 的對應段落縮成一行
 - **你發現 Agent 開始讀錯檔案時** — 代表索引不夠清楚，該優化了
-- **每次加新檔案時** — 順手更新 README 和加 frontmatter，維持習慣比一次大整理有效
+- **README 底部越長越長時** — 套用更新 log 規則（第 5 節）
+- **每次加新檔案時** — 順手更新索引和加 frontmatter，維持習慣比一次大整理有效

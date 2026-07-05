@@ -48,6 +48,68 @@ These three files are read on every Agent startup. Everything else is read as ne
 
 ---
 
+## Index Layering (v2)
+
+A single README index stops scaling as the vault grows. In practice, folders split into two kinds:
+
+- **Slow-changing folders** (identity/, context/, operations/): listed file by file directly in the root README. They change rarely, so the index stays accurate.
+- **Growing folders** (memory/, projects/, hr/): time-ordered logs that keep accumulating. Each carries its own `INDEX.md`; the root README keeps only a one-line entry pointing to it.
+
+Retrieval then works in three layers:
+
+```
+Root README          ← structure only; growing folders get a one-line pointer
+  ↓
+INDEX.md per folder  ← full listing + status for memory/, projects/, hr/
+  ↓
+Individual files     ← YAML frontmatter (updated / tags / summary) as the search layer
+```
+
+Why: the root README is read on every startup, so it is cost-sensitive and must not keep growing. `INDEX.md` isolates the growth. Frontmatter catches the cross-cutting queries the indexes can't.
+
+Trigger for adding an `INDEX.md`: the folder passes roughly 10 files and you expect it to keep growing.
+
+---
+
+## The Three Always-Read Files Have a Budget (v2)
+
+`README.md`, `agent-persona.md`, and `memory-summary.md` are read on every startup. Their combined size is a fixed attention tax your Agent pays before doing any work. Only content that must be fresh in mind every session belongs there: core persona, retrieval priorities, forced rules, current focus.
+
+**Externalization trigger** (both must hold):
+
+1. The passage is longer than ~5 lines
+2. It is not used in every session
+
+Move it out: behavioral mechanisms go to `identity/`, procedures go to `sop/`, change history goes to the folder's `INDEX.md` or `sop/vault-changelog.md`. Leave a one-line pointer behind.
+
+Re-run this check every time you add to any of the three files. Moving something out and later bringing it back is cheap; letting the core files bloat is not.
+
+---
+
+## Maintenance: Layered Defense (v2)
+
+A single "keep the index in sync" instruction is not reliable: the Agent will miss it, and you will forget to check. Stack four layers instead:
+
+1. **Active — Forced Rules in Global Instructions**: sync indexes in the same response that changed the files; read voice-and-tone before drafting anything public
+2. **Safety net — After-action review**: at task close, re-check that indexes and related docs were updated ([templates/after-action.md](templates/after-action.md))
+3. **Periodic checkup — Vault audit**: on demand or on a schedule, compare actual files against the indexes ([templates/vault-audit.md](templates/vault-audit.md))
+4. **Background discipline — Forced Rules in the vault README itself**: the Agent re-reads the rules on every startup ([templates/vault-readme.md](templates/vault-readme.md))
+
+Any single layer leaks. Four stacked layers bring drift close to zero.
+
+---
+
+## Patterns That Emerged from Daily Use (v2)
+
+Patterns that weren't in the original design but earned their place:
+
+- **Top-level dashboard for the hottest project.** When one project dominates your weeks (a launch, a filing, a fundraise), give it a one-page dashboard at the vault root, e.g. `launch-dashboard.md`: current status, today's P0, key dates, quick-reference IDs. Details stay in the project folder; the dashboard is just the cockpit view.
+- **`projects/archive/`.** Move closed projects there so the active list stays readable. Update links when you move them.
+- **skills/ holds only skills you wrote.** Don't copy your AI tool's built-in skills into the vault; they're large, they version-drift, and the tool already ships them.
+- **A personal track alongside the company dimension.** A small folder (todo, done-log, key contacts) for your personal operating rhythm. The done-log doubles as a portfolio of shipped work.
+
+---
+
 ## Agent Startup Sequence
 
 Regardless of the tool (Cowork, OpenClaw, Claude Code), the Agent follows the same reading order on every startup:
@@ -69,4 +131,4 @@ Another difference: the Agent isn't just a memory store — it's a cofounder. Th
 
 ---
 
-*Last updated: 2026/04/15*
+*Last updated: 2026/07/05 (v2: index layering, attention budget, layered-defense maintenance, daily-use patterns)*

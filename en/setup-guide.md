@@ -133,6 +133,8 @@ projects/
 
 The date prefix isn't strict — use the month the project starts, not "this month." When a project closes, you can leave it (history) or move it to `projects/archive/`.
 
+One more thing to know for later: once a folder passes ~10 files and keeps growing (memory/, projects/, hr/ tend to), give it its own `INDEX.md` and shrink its README entry to one line. You don't need this on day one; see [optimization-guide.md](optimization-guide.md) when you get there.
+
 Templates are available in the [templates/](templates/) folder.
 
 ---
@@ -180,4 +182,5 @@ Once configured, just write in Obsidian — it handles the rest.
 
 ---
 
-*Last updated: 2026/04/17 (added .gitattributes / .gitignore step + persona discussion note + voice-and-tone template)*
+*Last updated: 2026/07/05 (v2: pointer to index layering for growing folders)*
+*Previous: 2026/04/17 (added .gitattributes / .gitignore step + persona discussion note + voice-and-tone template)*

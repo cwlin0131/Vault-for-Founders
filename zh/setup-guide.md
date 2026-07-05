@@ -129,6 +129,8 @@ projects/
 
 日期前綴不用很嚴格 —— 用 project 開始的月份，不是「這個月」。Project 結束後可以留著（當歷史），或搬到 `projects/archive/`。
 
+先預告一件之後會用到的事：當某個資料夾超過大約 10 個檔案而且還在長（memory/、projects/、hr/ 通常會），就給它一份自己的 `INDEX.md`，README 的對應段落縮成一行。第一天不需要做這件事，等長大再看 [optimization-guide.md](optimization-guide.md)。
+
 模板可以在 [templates/](templates/) 資料夾裡找到。
 
 ---
@@ -176,4 +178,5 @@ git push -u origin main
 
 ---
 
-*最後更新：2026/04/17（新增 .gitattributes / .gitignore 步驟 + persona 對話提醒 + voice-and-tone 模板）*
+*最後更新：2026/07/05（v2：新增會堆疊資料夾的索引分層預告）*
+*前次更新：2026/04/17（新增 .gitattributes / .gitignore 步驟 + persona 對話提醒 + voice-and-tone 模板）*
